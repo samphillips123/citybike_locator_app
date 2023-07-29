@@ -27,15 +27,19 @@ window.onload = (e) => {
                 // if statement to check if city location matches userInput. API data changed to all lowercase
                     // Used .includes() method to account for citys in the USA. This is because there is non an individual key for state and that data is included in the city key.
                 if (cityBikeNetwork.networks[i].location.city.toLowerCase().includes(userInput)) {
-                    console.log('Yes! ' + i)
+                    // console.log('Yes! ' + i)
+
+                    // initialize network based off search
+                    const network = cityBikeNetwork.networks[i]
+
                     // redefine networkEndPoint as the href for the itteration of 'i'
-                    networkEndPoint = cityBikeNetwork.networks[i].href
+                    networkEndPoint = network.href
                     // return API data for network name in html
-                    document.querySelector('#network-name').innerHTML = cityBikeNetwork.networks[i].name
+                    document.querySelector('#network-name').innerHTML = network.name
                     // return API data for network city in html
-                    document.querySelector('#network-city').innerHTML = cityBikeNetwork.networks[i].location.city
+                    document.querySelector('#network-city').innerHTML = network.location.city
                     // return API data for network country in html
-                    document.querySelector('#network-country').innerHTML = cityBikeNetwork.networks[i].location.country
+                    document.querySelector('#network-country').innerHTML = network.location.country
 
                     break
 
@@ -52,11 +56,14 @@ window.onload = (e) => {
             }, (err) => {
                 console.log(err, ` ERROR`)
             }).then((cityBikeLocation) => {
-                console.log(cityBikeLocation.network.stations.length)
+                // console.log(cityBikeLocation.network.stations.length)
+
+                // initialize networkStations from search
+                const networkStations = cityBikeLocation.network.stations
 
                 // loop through all network location names
-                for (let i = 0; i < cityBikeLocation.network.stations.length; i++) {
-                    console.log(cityBikeLocation.network.stations[i].name)
+                for (let i = 0; i < networkStations.length; i++) {
+                    console.log(networkStations[i].name)
                 }
 
             
