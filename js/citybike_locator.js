@@ -68,6 +68,8 @@ window.onload = (e) => {
                 let resultsList = document.getElementById('results-list')
                 resultsList.appendChild(stationDiv)
 
+                // ***** NEED TO FIGURE OUT 500 INTERNAL SERVER ERROR *****
+
                 // loop through all network location names
                 for (let i = 0; i < networkStations.length; i++) {
                     console.log(networkStations[i].name)
