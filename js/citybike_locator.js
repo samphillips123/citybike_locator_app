@@ -8,8 +8,10 @@ window.onload = (e) => {
         e.preventDefault()
         // initialize variable for userInput. Variable is changed to lowercase to help with search.
         const userInput = document.querySelector('input[type="text"]').value.toLowerCase()
-
         console.log(userInput)
+
+        // define variable for API network endpoint (href)
+        let networkEndPoint = ''
     
         // set up fetch to CityBike API
         fetch(`https://api.citybik.es/v2/networks`).then((data) => {
@@ -22,7 +24,11 @@ window.onload = (e) => {
             for (let i = 0; i < cityBikeData.networks.length; i++) {
                 // if statement to check if city location matches userInput. API data changed to all lowercase
                 if (cityBikeData.networks[i].location.city.toLowerCase() === userInput) {
-                    console.log('Yes!')
+                    console.log('Yes! ' + i)
+                    // redefine networkEndPoint as the href for the itteration of 'i'
+                    networkEndPoint = cityBikeData.networks[i].href
+                    console.log(networkEndPoint)
+
                 } else {
                     console.log('No!')
                 }
