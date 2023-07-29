@@ -10,7 +10,7 @@ window.onload = (e) => {
         const userInput = document.querySelector('input[type="text"]').value.toLowerCase()
         console.log(userInput)
 
-        // define variable for API network endpoint (href)
+        // declare variable for API network endpoint (href)
         let networkEndPoint = ''
     
         // set up fetch to CityBike API
@@ -23,7 +23,8 @@ window.onload = (e) => {
             // loop through API to find match for city location
             for (let i = 0; i < cityBikeData.networks.length; i++) {
                 // if statement to check if city location matches userInput. API data changed to all lowercase
-                if (cityBikeData.networks[i].location.city.toLowerCase() === userInput) {
+                // Used .includes() method to account for citys in the USA. This is because there is non an individual key for state and that data is included in the city key.
+                if (cityBikeData.networks[i].location.city.toLowerCase().includes(userInput)) {
                     console.log('Yes! ' + i)
                     // redefine networkEndPoint as the href for the itteration of 'i'
                     networkEndPoint = cityBikeData.networks[i].href
