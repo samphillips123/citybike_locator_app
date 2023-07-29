@@ -30,11 +30,16 @@ window.onload = (e) => {
                     console.log('Yes! ' + i)
                     // redefine networkEndPoint as the href for the itteration of 'i'
                     networkEndPoint = cityBikeNetwork.networks[i].href
+                    // return API data for network name in html
+                    document.querySelector('#network-name').innerHTML = cityBikeNetwork.networks[i].name
+                    // return API data for network city in html
+                    document.querySelector('#network-city').innerHTML = cityBikeNetwork.networks[i].location.city
+                    // return API data for network country in html
+                    document.querySelector('#network-country').innerHTML = cityBikeNetwork.networks[i].location.country
+
                     break
 
                     // **** COME BACK TO THIS LATER TO HANDLE INSTANCES WHERE THERE MAY BE MULTIPLE RESULTS ****
-
-                    // console.log(networkEndPoint)
 
                 } /* else {
                     console.log('No!')
@@ -54,12 +59,7 @@ window.onload = (e) => {
                     console.log(cityBikeLocation.network.stations[i].name)
                 }
 
-            // // return API data for network name in html
-            // document.querySelector('#network-name').innerHTML = cityBikeData.networks[0].name
-            // // return API data for network city in html
-            // document.querySelector('#network-city').innerHTML = cityBikeData.networks[0].location.city
-            // // return API data for network country in html
-            // document.querySelector('#network-country').innerHTML = cityBikeData.networks[0].location.country
+            
             })
         })
     })
