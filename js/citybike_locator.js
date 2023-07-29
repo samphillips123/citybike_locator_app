@@ -17,13 +17,23 @@ window.onload = (e) => {
         }, (err) => {
             console.log(err, ` ERROR`)
         }).then((cityBikeData) => {
-            console.log(cityBikeData.networks[0])
-            // return API data for network name in html
-            document.querySelector('#network-name').innerHTML = cityBikeData.networks[0].name
-            // return API data for network city in html
-            document.querySelector('#network-city').innerHTML = cityBikeData.networks[0].location.city
-            // return API data for network country in html
-            document.querySelector('#network-country').innerHTML = cityBikeData.networks[0].location.country
+            console.log(cityBikeData.networks.length)
+
+            for (let i = 0; i < cityBikeData.networks.length; i++) {
+                if (cityBikeData.networks[i].name === userInput) {
+                    console.log('Yes!')
+                } else {
+                    console.log('No!')
+                }
+            }
+
+
+            // // return API data for network name in html
+            // document.querySelector('#network-name').innerHTML = cityBikeData.networks[0].name
+            // // return API data for network city in html
+            // document.querySelector('#network-city').innerHTML = cityBikeData.networks[0].location.city
+            // // return API data for network country in html
+            // document.querySelector('#network-country').innerHTML = cityBikeData.networks[0].location.country
         })
     })
 }
