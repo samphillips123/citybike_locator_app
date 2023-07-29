@@ -18,22 +18,38 @@ window.onload = (e) => {
             return data.json()
         }, (err) => {
             console.log(err, ` ERROR`)
-        }).then((cityBikeData) => {
-            console.log(cityBikeData.networks.length)
+        }).then((cityBikeNetwork) => {
+            // // log the length of the API
+            // console.log(cityBikeData.networks.length)
+
             // loop through API to find match for city location
-            for (let i = 0; i < cityBikeData.networks.length; i++) {
+            for (let i = 0; i < cityBikeNetwork.networks.length; i++) {
                 // if statement to check if city location matches userInput. API data changed to all lowercase
-                // Used .includes() method to account for citys in the USA. This is because there is non an individual key for state and that data is included in the city key.
-                if (cityBikeData.networks[i].location.city.toLowerCase().includes(userInput)) {
+                    // Used .includes() method to account for citys in the USA. This is because there is non an individual key for state and that data is included in the city key.
+                if (cityBikeNetwork.networks[i].location.city.toLowerCase().includes(userInput)) {
                     console.log('Yes! ' + i)
-                    // redefine networkEndPoint as the href for the itteration of 'i'
-                    networkEndPoint = cityBikeData.networks[i].href
+                    // return and redefine networkEndPoint as the href for the itteration of 'i'
+                        // return will stop loop at first network found.
+                    networkEndPoint = cityBikeNetwork.networks[i].href
+
+                    // return networkEndPoint
+
+                    // **** COME BACK TO THIS LATER TO HANDLE INSTANCES WHERE THERE MAY BE MULTIPLE RESULTS ****
+
                     console.log(networkEndPoint)
 
-                } else {
+                } /* else {
                     console.log('No!')
-                }
+                } */
             }
+
+            // Do another fetch into second level of data for network locations using networkEndPoint (href)
+            fetch(`https://api.citybik.es/${networkEndPoint}`).then((data) => {
+            return data.json()
+            }, (err) => {
+                console.log(err, ` ERROR`)
+            }).then((cityBikeLocation) => {
+                console.log(cityBikeLocation.network.stations[0].name)
 
 
             // // return API data for network name in html
@@ -42,6 +58,7 @@ window.onload = (e) => {
             // document.querySelector('#network-city').innerHTML = cityBikeData.networks[0].location.city
             // // return API data for network country in html
             // document.querySelector('#network-country').innerHTML = cityBikeData.networks[0].location.country
+            })
         })
     })
 }
