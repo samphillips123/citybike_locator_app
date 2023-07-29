@@ -2,6 +2,14 @@
 // API: https://api.citybik.es/v2/#filter
 
 window.onload = (e) => {
+    document.querySelector('form').addEventListener('submit', (e) => {
+        e.preventDefault()
+
+        const userInput = document.querySelector('input[type="text"]').value
+
+        console.log(userInput)
+    })
+
     fetch(`https://api.citybik.es/v2/networks`).then((data) => {
         return data.json()
     }, (err) => {
