@@ -28,15 +28,13 @@ window.onload = (e) => {
                     // Used .includes() method to account for citys in the USA. This is because there is non an individual key for state and that data is included in the city key.
                 if (cityBikeNetwork.networks[i].location.city.toLowerCase().includes(userInput)) {
                     console.log('Yes! ' + i)
-                    // return and redefine networkEndPoint as the href for the itteration of 'i'
-                        // return will stop loop at first network found.
+                    // redefine networkEndPoint as the href for the itteration of 'i'
                     networkEndPoint = cityBikeNetwork.networks[i].href
-
-                    // return networkEndPoint
+                    break
 
                     // **** COME BACK TO THIS LATER TO HANDLE INSTANCES WHERE THERE MAY BE MULTIPLE RESULTS ****
 
-                    console.log(networkEndPoint)
+                    // console.log(networkEndPoint)
 
                 } /* else {
                     console.log('No!')
@@ -49,8 +47,12 @@ window.onload = (e) => {
             }, (err) => {
                 console.log(err, ` ERROR`)
             }).then((cityBikeLocation) => {
-                console.log(cityBikeLocation.network.stations[0].name)
+                console.log(cityBikeLocation.network.stations.length)
 
+                // loop through all network location names
+                for (let i = 0; i < cityBikeLocation.network.stations.length; i++) {
+                    console.log(cityBikeLocation.network.stations[i].name)
+                }
 
             // // return API data for network name in html
             // document.querySelector('#network-name').innerHTML = cityBikeData.networks[0].name
