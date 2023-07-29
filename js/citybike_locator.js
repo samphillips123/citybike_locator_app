@@ -6,8 +6,8 @@ window.onload = (e) => {
     document.querySelector('form').addEventListener('submit', (e) => {
         // prevent page from reloading when even listener is activated
         e.preventDefault()
-        // initialize variable for userInput
-        const userInput = document.querySelector('input[type="text"]').value
+        // initialize variable for userInput. Variable is changed to lowercase to help with search.
+        const userInput = document.querySelector('input[type="text"]').value.toLowerCase()
 
         console.log(userInput)
     
@@ -18,9 +18,10 @@ window.onload = (e) => {
             console.log(err, ` ERROR`)
         }).then((cityBikeData) => {
             console.log(cityBikeData.networks.length)
-
+            // loop through API to find match for city location
             for (let i = 0; i < cityBikeData.networks.length; i++) {
-                if (cityBikeData.networks[i].name === userInput) {
+                // if statement to check if city location matches userInput. API data changed to all lowercase
+                if (cityBikeData.networks[i].location.city.toLowerCase() === userInput) {
                     console.log('Yes!')
                 } else {
                     console.log('No!')
