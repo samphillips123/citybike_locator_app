@@ -34,8 +34,6 @@ window.onload = (e) => {
                 // if statement to check if city location matches userInput. API data changed to all lowercase
                     // Used .includes() method to account for citys in the USA. This is because there is non an individual key for state and that data is included in the city key.
                 if (cityBikeNetwork.networks[i].location.city.toLowerCase().includes(userInput)) {
-                    // console.log('Yes! ' + i)
-
                     // initialize network based off search
                     const network = cityBikeNetwork.networks[i]
 
@@ -66,8 +64,21 @@ window.onload = (e) => {
                 // initialize networkStations from search
                 let networkStations = cityBikeLocation.network.stations
 
+                // initialize max result number of 100 or less shown
+                let resultsMax = 100
+
+                // define function checking if a network has more/less than 100 stations and adjusting accordingly for the for loop
+                const stationsMax = (network) => {
+                    if (network.length < 100) {
+                        resultsMax = network.length
+                    }
+                }
+
+                // calling stationsMax function with the current network searched for.
+                stationsMax(networkStations)
+
                 // loop through all network location names
-                for (let i = 0; i < networkStations.length; i++) {
+                for (let i = 0; i < resultsMax; i++) {
                     if (i === 0) {
                         // define parent list to clear search resulsts.
                         const resultsList = document.querySelector('#results-list')
@@ -96,6 +107,9 @@ window.onload = (e) => {
                     stationDiv.appendChild(dtStallsAvail)
                 }
                 console.log('complete with ' + cityBikeLocation.network.stations.length + ' stations shown')
+                console.log(networkStations[99].name)
+            
+                // add event listener for a click on a specific station div. This will pull data for that station and highlight it in it's own section.
             })
         })
     })
