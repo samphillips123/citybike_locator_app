@@ -61,13 +61,6 @@ window.onload = (e) => {
                 // initialize networkStations from search
                 let networkStations = cityBikeLocation.network.stations
 
-                // test using DOM to make information for each instance of the stations
-                const stationDiv = document.createElement('div')
-                stationDiv.setAttribute('id', networkStations[0].name)
-
-                let resultsList = document.getElementById('results-list')
-                resultsList.appendChild(stationDiv)
-
                 // loop through all network location names
                 for (let i = 0; i < networkStations.length; i++) {
                     // Create a div to house the stations information with an id of the station name
