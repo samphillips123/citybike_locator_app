@@ -12,7 +12,14 @@ window.onload = (e) => {
 
         // declare variable for API network endpoint (href)
         let networkEndPoint = ''
-    
+
+        // define function to clear list of results
+        const removeAllStations = (parent) => {
+            while (parent.firstChild) {
+            parent.removeChild(parent.firstChild)
+            }
+        }
+
         // set up fetch to CityBike API
         fetch(`https://api.citybik.es/v2/networks`).then((data) => {
             return data.json()
@@ -56,13 +63,17 @@ window.onload = (e) => {
             }, (err) => {
                 console.log(err, ` ERROR`)
             }).then((cityBikeLocation) => {
-                console.log(cityBikeLocation.network.stations.length)
-
                 // initialize networkStations from search
                 let networkStations = cityBikeLocation.network.stations
 
                 // loop through all network location names
                 for (let i = 0; i < networkStations.length; i++) {
+                    if (i === 0) {
+                        // define parent list to clear search resulsts.
+                        const resultsList = document.querySelector('#results-list')
+                        // call removeAllStations funciton with the argument of results list to clear search when a new search is entered.
+                        removeAllStations(resultsList)
+                    }
                     // Create a div to house the stations information with an id of the station name
                     let stationDiv = document.createElement('div')
                     stationDiv.setAttribute('id', networkStations[i].name)
@@ -84,9 +95,7 @@ window.onload = (e) => {
                     dtStallsAvail.innerHTML = 'Empty Stalls: ' + networkStations[i].empty_slots                    
                     stationDiv.appendChild(dtStallsAvail)
                 }
-                console.log('complete')
-
-            
+                console.log('complete with ' + cityBikeLocation.network.stations.length + ' stations shown')
             })
         })
     })
