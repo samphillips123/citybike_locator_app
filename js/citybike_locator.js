@@ -65,6 +65,7 @@ window.onload = (e) => {
                 let networkStations = cityBikeLocation.network.stations
 
                 // initialize max result number of 100 or less shown
+                // **** FUTURE UPDATE -- CHANGE TO EVENT LISTENER SO USER CAN DECIDE MAX # OF RESULTS ****
                 let resultsMax = 100
 
                 // define function checking if a network has more/less than 100 stations and adjusting accordingly for the for loop
@@ -107,9 +108,14 @@ window.onload = (e) => {
                     stationDiv.appendChild(dtStallsAvail)
                 }
                 console.log('complete with ' + cityBikeLocation.network.stations.length + ' stations shown')
-                console.log(networkStations[99].name)
+                // console.log(networkStations[99].name)
             
                 // add event listener for a click on a specific station div. This will pull data for that station and highlight it in it's own section.
+                const testFunction = () => {console.log('you clicked')}
+                
+                document.addEventListener("click", testFunction)
+
+                
             })
         })
     })
