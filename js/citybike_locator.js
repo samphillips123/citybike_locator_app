@@ -56,10 +56,10 @@ window.onload = (e) => {
             }, (err) => {
                 console.log(err, ` ERROR`)
             }).then((cityBikeLocation) => {
-                // console.log(cityBikeLocation.network.stations.length)
+                console.log(cityBikeLocation.network.stations.length)
 
                 // initialize networkStations from search
-                const networkStations = cityBikeLocation.network.stations
+                let networkStations = cityBikeLocation.network.stations
 
                 // test using DOM to make information for each instance of the stations
                 const stationDiv = document.createElement('div')
@@ -68,12 +68,30 @@ window.onload = (e) => {
                 let resultsList = document.getElementById('results-list')
                 resultsList.appendChild(stationDiv)
 
-                // ***** NEED TO FIGURE OUT 500 INTERNAL SERVER ERROR *****
-
                 // loop through all network location names
                 for (let i = 0; i < networkStations.length; i++) {
-                    console.log(networkStations[i].name)
+                    // Create a div to house the stations information with an id of the station name
+                    let stationDiv = document.createElement('div')
+                    stationDiv.setAttribute('id', networkStations[i].name)
+                    let resultsList = document.getElementById('results-list')
+                    resultsList.appendChild(stationDiv)
+                    
+                    // Create a header with the name of the station
+                    let stationH4Name = document.createElement('h4')
+                    stationH4Name.innerHTML = networkStations[i].name
+                    stationDiv.appendChild(stationH4Name)
+
+                    // Create and define the number of bikes available at the specific station
+                    let dtBikesAvail = document.createElement('dt')
+                    dtBikesAvail.innerHTML = 'Bikes Available: ' + networkStations[i].free_bikes                    
+                    stationDiv.appendChild(dtBikesAvail)
+                    
+                    // Create and define the number of empty stalls at the specific station
+                    let dtStallsAvail = document.createElement('dt')
+                    dtStallsAvail.innerHTML = 'Empty Stalls: ' + networkStations[i].empty_slots                    
+                    stationDiv.appendChild(dtStallsAvail)
                 }
+                console.log('complete')
 
             
             })

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityBike Locator</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/test_citybike_locator.js"></script>
+</head>
+<body>
+    <header>
+        <h1>CityBike Locator</h1>
+    </header>
+
+    <form>
+        <input type="text" placeholder="Enter City Name"/>
+        <input type="submit" value="Search"/>
+    </form>
+
+    <div class="network-result">
+        <h3>Network Info</h3>
+        <dl>
+            <dt>Network:</dt>
+            <dd id="network-name"></dd>
+
+            <dt>City:</dt>
+            <dd id="network-city"></dd>
+
+            <dt>Country:</dt>
+            <dd id="network-country"></dd>
+        </dl>
+    </div>
+    
+    <div id="results-list">
+        <h3>Results</h3>
+    </div>
+
+    <div class="selected-result">
+        <!-- <h3>Network Info</h3>
+        <dl>
+            <dt>Network Name</dt>
+            <dd id="network-name"></dd>
+
+            <dt>Network City</dt>
+            <dd id="network-city"></dd>
+
+            <dt>Network Country</dt>
+            <dd id="network-country"></dd>
+        </dl> -->
+    </div>
+
+</body>
+</html>
