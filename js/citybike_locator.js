@@ -88,7 +88,7 @@ window.onload = (e) => {
                     }
                     // Create a div to house the stations information with an id of the station name
                     let stationDiv = document.createElement('div')
-                    stationDiv.setAttribute('id', networkStations[i].name)
+                    stationDiv.setAttribute('class', 'station')
                     let resultsList = document.getElementById('results-list')
                     resultsList.appendChild(stationDiv)
                     
