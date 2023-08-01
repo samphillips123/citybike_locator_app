@@ -8,7 +8,7 @@ window.onload = (e) => {
         e.preventDefault()
         // initialize variable for userInput. Variable is changed to lowercase to help with search.
         const userInput = document.querySelector('input[type="text"]').value.toLowerCase()
-        console.log(userInput)
+        // console.log(userInput)
 
         // declare variable for API network endpoint (href)
         let networkEndPoint = ''
@@ -78,6 +78,13 @@ window.onload = (e) => {
                 // calling stationsMax function with the current network searched for.
                 stationsMax(networkStations)
 
+                // Create "network-result" div once a search has happened.
+                let resultsListDiv = document.createElement('div')
+                resultsListDiv.setAttribute('id','results-list')
+                let bodyTag = document.querySelector('body')
+                bodyTag.appendChild(resultsListDiv)
+
+
                 // loop through all network location names
                 for (let i = 0; i < resultsMax; i++) {
                     if (i === 0) {
@@ -89,8 +96,8 @@ window.onload = (e) => {
                     // Create a div to house the stations information with an id of the station name
                     let stationDiv = document.createElement('div')
                     stationDiv.setAttribute('class', 'station')
-                    let resultsList = document.getElementById('results-list')
-                    resultsList.appendChild(stationDiv)
+                    // let resultsList = document.getElementById('results-list')
+                    resultsListDiv.appendChild(stationDiv)
                     
                     // Create a header with the name of the station
                     let stationH4Name = document.createElement('h4')
