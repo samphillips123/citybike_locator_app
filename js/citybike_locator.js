@@ -88,15 +88,12 @@ window.onload = (e) => {
                 // loop through all network location names
                 for (let i = 0; i < resultsMax; i++) {
                     if (i === 0) {
-                        // define parent list to clear search resulsts.
-                        const resultsList = document.querySelector('#results-list')
                         // call removeAllStations funciton with the argument of results list to clear search when a new search is entered.
-                        removeAllStations(resultsList)
+                        removeAllStations(resultsListDiv)
                     }
                     // Create a div to house the stations information with an id of the station name
                     let stationDiv = document.createElement('div')
                     stationDiv.setAttribute('class', 'station')
-                    // let resultsList = document.getElementById('results-list')
                     resultsListDiv.appendChild(stationDiv)
                     
                     // Create a header with the name of the station
