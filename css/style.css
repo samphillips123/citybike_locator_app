@@ -1,12 +1,14 @@
 /* default style for mobile */
 
-* {
-    background-color: maroon;
+body {
+    background-color: rgb(156, 213, 235);
 }
 
 header {
-    border-style: solid;
+    background-color: whitesmoke;
+    border: 3px solid;
     border-radius: 15px;
+    padding: 10px;
     margin: 20px auto 40px;
     text-align: center;
 }
@@ -15,7 +17,12 @@ h1 {
     margin: 10px 30px;
 }
 
+form {
+    text-align: center;
+}
+
 #results-list {
+    background-color: whitesmoke;
     border-style: solid;
     border-radius: 30px;
     height: 50%;
@@ -33,6 +40,7 @@ h3 {
 }
 
 .station {
+    background-color: azure;
     border-style: solid; 
     border-radius: 25px;
     /* color: white; */
