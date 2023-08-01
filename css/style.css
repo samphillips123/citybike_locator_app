@@ -1,7 +1,7 @@
 /* default style for mobile */
 
 body {
-    background-color: rgb(156, 213, 235);
+    background-color: rgb(121, 185, 210);
 }
 
 header {
@@ -9,7 +9,7 @@ header {
     border: 3px solid;
     border-radius: 15px;
     padding: 10px;
-    margin: 20px auto 40px;
+    margin: 20px auto 30px;
     text-align: center;
 }
 
@@ -17,8 +17,12 @@ h1 {
     margin: 10px 30px;
 }
 
-form {
+form [type=submit], [type=text]{
     text-align: center;
+    border-radius: 3px;
+    border: 1px solid;
+    font-size: 1.5rem;
+
 }
 
 #results-list {
