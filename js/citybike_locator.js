@@ -20,6 +20,9 @@ window.onload = (e) => {
             }
         }
 
+        // define resultsDiv to be used with removeAllStations later
+        let resultsDiv = document.querySelector('.results')
+
         // set up fetch to CityBike API
         fetch(`https://api.citybik.es/v2/networks`).then((data) => {
             return data.json()
@@ -40,11 +43,11 @@ window.onload = (e) => {
                     // redefine networkEndPoint as the href for the itteration of 'i'
                     networkEndPoint = network.href
                     // return API data for network name in html
-                    document.querySelector('#network-name').innerHTML = network.name
-                    // return API data for network city in html
-                    document.querySelector('#network-city').innerHTML = network.location.city
-                    // return API data for network country in html
-                    document.querySelector('#network-country').innerHTML = network.location.country
+                    // document.querySelector('#network-name').innerHTML = network.name
+                    // // return API data for network city in html
+                    // document.querySelector('#network-city').innerHTML = network.location.city
+                    // // return API data for network country in html
+                    // document.querySelector('#network-country').innerHTML = network.location.country
 
                     break
 
@@ -78,19 +81,17 @@ window.onload = (e) => {
                 // calling stationsMax function with the current network searched for.
                 stationsMax(networkStations)
 
+                
+                // call removeAllStations funciton with the argument of results list to clear search when a new search is entered.
+                removeAllStations(resultsDiv)
+                
                 // Create "network-result" div once a search has happened.
                 let resultsListDiv = document.createElement('div')
                 resultsListDiv.setAttribute('id','results-list')
-                let bodyTag = document.querySelector('body')
-                bodyTag.appendChild(resultsListDiv)
-
+                resultsDiv.appendChild(resultsListDiv)
 
                 // loop through all network location names
                 for (let i = 0; i < resultsMax; i++) {
-                    if (i === 0) {
-                        // call removeAllStations funciton with the argument of results list to clear search when a new search is entered.
-                        removeAllStations(resultsListDiv)
-                    }
                     // Create a div to house the stations information with an id of the station name
                     let stationDiv = document.createElement('div')
                     stationDiv.setAttribute('class', 'station')
