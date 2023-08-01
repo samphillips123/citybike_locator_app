@@ -1,3 +1,5 @@
+/* default style for mobile */
+
 * {
     background-color: maroon;
 }
@@ -6,6 +8,7 @@ header {
     border-style: solid;
     border-radius: 15px;
     margin: 20px auto 40px;
+    text-align: center;
 }
 
 h1 {
@@ -15,10 +18,14 @@ h1 {
 #results-list {
     border-style: solid;
     border-radius: 30px;
-    height: 600px;
-    max-width: 400px;
+    height: 50%;
+    position: absolute;
+    bottom: 0px;
+    width: 84%;
     padding: 20px;
+    margin: 20px auto;
     overflow: auto;
+    text-align: center;
 }
 
 h3 {
