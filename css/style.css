@@ -12,16 +12,27 @@ header {
     padding: 10px;
     margin: 20px auto 30px;
     text-align: center;
+    height: 15%;
 }
 
 h1 {
     margin: 10px 30px;
 }
 
-form [type=submit], [type=text]{
+form {
     border-radius: 6px;
     border: 1px solid;
-    font-size: 1.55rem;
+    display: flex;
+    justify-content: center;
+}
+
+[type=text] {
+    font-size: 1.25rem;
+    width: 100%;
+}
+
+[type=submit] {
+    font-size : 1.25rem;
 }
 
 .network-result {
