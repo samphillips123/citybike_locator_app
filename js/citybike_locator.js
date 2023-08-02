@@ -23,20 +23,17 @@ window.onload = (e) => {
         // define resultsDiv to be used with removeAllStations later
         let resultsDiv = document.querySelector('.results')
 
-        // define function to show/hide image: https://www.dofactory.com/html/img/hidden
-        let hiddenImg = () => {
-            let wheel = document.querySelector('.bicycle-wheel')
-            let hide = wheel.getAttribute('hidden')
-
-            if (hide) {
-                wheel.removeAttribute('hidden')
-            } else {
-                wheel.setAttribute('hidden', 'hidden')
-            }
+        // define  showImg and hideImg functions to show/hide image: https://www.dofactory.com/html/img/hidden
+        let wheel = document.querySelector('.bicycle-wheel')
+        let hide = wheel.getAttribute('hidden')
+        
+        let showImg = () => {
+            wheel.removeAttribute('hidden')
         }
 
-        hiddenImg()
-
+        let hideImg = () => {
+            wheel.setAttribute('hidden','hidden')
+        }
 
         // set up fetch to CityBike API
         fetch(`https://api.citybik.es/v2/networks`).then((data) => {
@@ -44,10 +41,9 @@ window.onload = (e) => {
         }, (err) => {
             console.log(err, ` ERROR`)
         }).then((cityBikeNetwork) => {
-            // // log the length of the API
-            // console.log(cityBikeData.networks.length)
 
-            // hiddenImg()
+            // call showImg to have bike wheel spin
+            showImg()
 
             // loop through API to find match for city location
             for (let i = 0; i < cityBikeNetwork.networks.length; i++) {
@@ -172,7 +168,10 @@ window.onload = (e) => {
                 // // add event listener for a click on a specific station div. This will pull data for that station and highlight it in it's own section.
                 // const testFunction = () => {console.log('you clicked')}
                 
-                // document.addEventListener("click", testFunction)                
+                // document.addEventListener("click", testFunction)   
+                
+                // call hideImg to hide wheel to be ready for next search
+                hideImg()            
             })
         })
     })
