@@ -75,7 +75,7 @@ h2, h4 {
 /* Bicycle Wheel Animation */
 
 .bicycle-wheel {
-    animation: spin .8s 5 linear;
+    animation: spin .8s 3 linear;
 }
 
 @keyframes spin {
