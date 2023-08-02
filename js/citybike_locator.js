@@ -72,19 +72,19 @@ window.onload = (e) => {
                     // Create network name
                     let networkName = document.createElement('dt')
                     networkName.setAttribute('id', 'network-name')
-                    networkName.innerHTML = "<strong>Network:</strong> "
+                    networkName.innerHTML = '<strong>Network:</strong> '
                     networkInfoDiv.appendChild(networkName)
 
                     // Create network location
                     let networkLocation = document.createElement('dt')
                     networkLocation.setAttribute('id', 'network-location')
-                    networkLocation.innerHTML = "<strong>Location:</strong> "
+                    networkLocation.innerHTML = '<strong>Location:</strong> '
                     networkInfoDiv.appendChild(networkLocation)
 
                     // Create network number of stations
                     let networkStationQty = document.createElement('dt')
                     networkStationQty.setAttribute('id','station-qty')
-                    networkStationQty.innerHTML = "<strong>Stations:</strong> "
+                    networkStationQty.innerHTML = '<strong>Stations:</strong> '
                     networkInfoDiv.appendChild(networkStationQty)
 
 
@@ -127,15 +127,14 @@ window.onload = (e) => {
 
                 // Add network name
                 let networkName = document.querySelector('#network-name')
-                networkName.innerHTML = "<strong>Network:</strong> " + cityBikeLocation.network.name
+                networkName.innerHTML = '<strong>Network:</strong> ' + cityBikeLocation.network.name
 
                 // Add network location
                 let networkLocation = document.querySelector('#network-location')
-                networkLocation.innerHTML = "<strong>Location:</strong> " + cityBikeLocation.network.location.city + ", " + cityBikeLocation.network.location.country
-
+                networkLocation.innerHTML = '<strong>Location:</strong> ' + cityBikeLocation.network.location.city + ', ' + cityBikeLocation.network.location.country
                 // Add number of stations
                 let networkStationQty = document.querySelector('#station-qty')
-                networkStationQty.innerHTML = "<strong>Stations:</strong> " + networkStations.length
+                networkStationQty.innerHTML = '<strong>Stations:</strong> ' + networkStations.length
 
                 // Define resultsListDiv
                 let resultsListDiv = document.querySelector('#results-list')
@@ -154,12 +153,12 @@ window.onload = (e) => {
 
                     // Create and define the number of bikes available at the specific station
                     let dtBikesAvail = document.createElement('dt')
-                    dtBikesAvail.innerHTML = 'Bikes Available: ' + networkStations[i].free_bikes                    
+                    dtBikesAvail.innerHTML = '<strong>Bikes Available: </strong>' + networkStations[i].free_bikes                    
                     stationDiv.appendChild(dtBikesAvail)
                     
                     // Create and define the number of empty stalls at the specific station
                     let dtStallsAvail = document.createElement('dt')
-                    dtStallsAvail.innerHTML = 'Empty Stalls: ' + networkStations[i].empty_slots                    
+                    dtStallsAvail.innerHTML = '<strong>Empty Stalls: </strong>' + networkStations[i].empty_slots                    
                     stationDiv.appendChild(dtStallsAvail)
                 }
                 // console.log('complete with ' + cityBikeLocation.network.stations.length + ' stations shown')
