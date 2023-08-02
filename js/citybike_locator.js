@@ -59,19 +59,19 @@ window.onload = (e) => {
                     // Create network name
                     let networkName = document.createElement('dt')
                     networkName.setAttribute('id', 'network-name')
-                    networkName.innerHTML = "Network: "
+                    networkName.innerHTML = "<strong>Network:</strong> "
                     networkInfoDiv.appendChild(networkName)
 
                     // Create network location
                     let networkLocation = document.createElement('dt')
                     networkLocation.setAttribute('id', 'network-location')
-                    networkLocation.innerHTML = "Location: "
+                    networkLocation.innerHTML = "<strong>Location:</strong> "
                     networkInfoDiv.appendChild(networkLocation)
 
                     // Create network number of stations
                     let networkStationQty = document.createElement('dt')
                     networkStationQty.setAttribute('id','station-qty')
-                    networkStationQty.innerHTML = "Number of Stations: "
+                    networkStationQty.innerHTML = "<strong>Stations:</strong> "
                     networkInfoDiv.appendChild(networkStationQty)
 
 
@@ -114,15 +114,15 @@ window.onload = (e) => {
 
                 // Add network name
                 let networkName = document.querySelector('#network-name')
-                networkName.innerHTML = "Network: " + cityBikeLocation.network.name
+                networkName.innerHTML = "<strong>Network:</strong> " + cityBikeLocation.network.name
 
                 // Add network location
                 let networkLocation = document.querySelector('#network-location')
-                networkLocation.innerHTML = "Location: " + cityBikeLocation.network.location.city + ", " + cityBikeLocation.network.location.country
+                networkLocation.innerHTML = "<strong>Location:</strong> " + cityBikeLocation.network.location.city + ", " + cityBikeLocation.network.location.country
 
                 // Add number of stations
                 let networkStationQty = document.querySelector('#station-qty')
-                networkStationQty.innerHTML = "Number of Stations: " + networkStations.length
+                networkStationQty.innerHTML = "<strong>Stations:</strong> " + networkStations.length
 
                 // Define resultsListDiv
                 let resultsListDiv = document.querySelector('#results-list')

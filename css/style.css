@@ -20,12 +20,22 @@ h1 {
 form [type=submit], [type=text]{
     border-radius: 6px;
     border: 1px solid;
+    font-size: 1.55rem;
+}
+
+.network-result {
+    background-color: whitesmoke;
+    border: 3px solid;
+    border-radius: 30px;
+    padding: 20px 30px;
+    margin: 20px auto;
+}
+
+#network-location, #network-name, #station-qty {
     font-size: 1.5rem;
 }
 
-
-
-#results-list {
+#results-list{
     background-color: whitesmoke;
     border-style: solid;
     border-radius: 30px;
@@ -39,9 +49,7 @@ form [type=submit], [type=text]{
     text-align: center;
 }
 
-h3 {
-    margin: 0px auto
-}
+
 
 .station {
     background-color: azure;
@@ -53,6 +61,28 @@ h3 {
     margin: 5px;
 }
 
-h4 {
+h2, h4 {
     margin: 0px auto 5px;
+    text-align: center;
 }
+
+.search-animation {
+    display: flex;
+    justify-content: center;
+    margin: 50%;
+}
+
+/* Bicycle Wheel Animation */
+
+.bicycle-wheel {
+    animation: spin .8s 5 linear;
+}
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
