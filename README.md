@@ -11,6 +11,6 @@
 # When user enters a search, an animation will initiate while data is being fetched.
 
 # Stretch goals:
-# User will be able to toggle between a list view (default) and a mad view that pinpoints the locations.
+# User will be able to toggle between a list view (default) and a map view that pinpoints the locations.
 # Search bar will auto generate entries based off what the user has started to type.
 # If no bikes are available to rent or no stalls available for returns, app will tell user the next closest location.
