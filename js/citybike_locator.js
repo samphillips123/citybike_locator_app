@@ -42,13 +42,43 @@ window.onload = (e) => {
 
                     // redefine networkEndPoint as the href for the itteration of 'i'
                     networkEndPoint = network.href
-                    // return API data for network name in html
-                    // document.querySelector('#network-name').innerHTML = network.name
-                    // // return API data for network city in html
-                    // document.querySelector('#network-city').innerHTML = network.location.city
-                    // // return API data for network country in html
-                    // document.querySelector('#network-country').innerHTML = network.location.country
 
+                    // call removeAllStations funciton with the argument of results list to clear search when a new search is entered.
+                    removeAllStations(resultsDiv)
+
+                    // Create div for network-result
+                    let networkInfoDiv = document.createElement('div')
+                    networkInfoDiv.setAttribute('class', 'network-result')
+                    resultsDiv.appendChild(networkInfoDiv)
+
+                    // Create header for network info
+                    let networkInfoH2 = document.createElement('h2')
+                    networkInfoH2.innerHTML = 'Network Info'
+                    networkInfoDiv.appendChild(networkInfoH2)
+                
+                    // Create "network-result" div once a search has happened.
+                    let resultsListDiv = document.createElement('div')
+                    resultsListDiv.setAttribute('id','results-list')
+                    networkInfoDiv.appendChild(resultsListDiv)
+
+                    // Create network name
+                    let networkName = document.createElement('dt')
+                    networkName.setAttribute('id', 'network-name')
+                    networkName.innerHTML = "Network: "
+                    networkInfoDiv.appendChild(networkName)
+
+                    // Create network location
+                    let networkLocation = document.createElement('dt')
+                    networkLocation.setAttribute('id', 'network-location')
+                    networkLocation.innerHTML = "Location: "
+                    networkInfoDiv.appendChild(networkLocation)
+
+                    // Create network number of stations
+                    let networkStationQty = document.createElement('dt')
+                    networkStationQty.setAttribute('id','station-qty')
+                    networkStationQty.innerHTML = "Number of Stations: "
+                    networkInfoDiv.appendChild(networkStationQty)
+                    
                     break
 
                     // **** COME BACK TO THIS LATER TO HANDLE INSTANCES WHERE THERE MAY BE MULTIPLE RESULTS ****
@@ -81,14 +111,20 @@ window.onload = (e) => {
                 // calling stationsMax function with the current network searched for.
                 stationsMax(networkStations)
 
-                
-                // call removeAllStations funciton with the argument of results list to clear search when a new search is entered.
-                removeAllStations(resultsDiv)
-                
-                // Create "network-result" div once a search has happened.
-                let resultsListDiv = document.createElement('div')
-                resultsListDiv.setAttribute('id','results-list')
-                resultsDiv.appendChild(resultsListDiv)
+                // Add network name
+                let networkName = document.querySelector('#network-name')
+                networkName.innerHTML = "Network: " + cityBikeLocation.network.name
+
+                // Add network location
+                let networkLocation = document.querySelector('#network-location')
+                networkLocation.innerHTML = "Location: " + cityBikeLocation.network.location.city + ", " + cityBikeLocation.network.location.country
+
+                // Add number of stations
+                let networkStationQty = document.querySelector('#station-qty')
+                networkStationQty.innerHTML = "Number of Stations: " + networkStations.length
+
+                // Define resultsListDiv
+                let resultsListDiv = document.querySelector('#results-list')
 
                 // loop through all network location names
                 for (let i = 0; i < resultsMax; i++) {
@@ -118,9 +154,7 @@ window.onload = (e) => {
                 // add event listener for a click on a specific station div. This will pull data for that station and highlight it in it's own section.
                 const testFunction = () => {console.log('you clicked')}
                 
-                document.addEventListener("click", testFunction)
-
-                
+                document.addEventListener("click", testFunction)                
             })
         })
     })
