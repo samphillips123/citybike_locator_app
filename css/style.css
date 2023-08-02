@@ -17,8 +17,7 @@ header {
     text-align: center;
     display: flex;
     justify-content: center;
-    /* align-content: center; */
-    height: 15%;
+    /* height: 15%; */
 }
 
 h1 {
@@ -45,6 +44,7 @@ form {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    overflow-y: scroll;
 }
 
 .network-result {
@@ -66,14 +66,11 @@ form {
     background-color: whitesmoke;
     border-style: solid;
     border-radius: 30px;
-    max-height: 50%;
-    position: bottom;
-    /* bottom: 0px; */
     width: 80%;
     padding: 20px;
     margin: 5px auto;
-    overflow: auto;
     text-align: center;
+    overflow: auto;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -84,9 +81,8 @@ form {
     background-color: azure;
     border-style: solid; 
     border-radius: 25px;
-    /* color: white; */
-    max-width: 250px;
-    padding: 20px 30px;
+    width: 225px;
+    padding: 15px 20px;
     margin: 5px;
 }
 
@@ -98,7 +94,7 @@ h2, h4 {
 .search-animation {
     display: flex;
     justify-content: center;
-    margin: 50%;
+    /* margin: 50%; */
 }
 
 /* Bicycle Wheel Animation */
