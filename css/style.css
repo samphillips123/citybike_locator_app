@@ -82,7 +82,6 @@ form {
     padding: 20px;
     margin: 5px auto;
     text-align: center;
-    overflow: auto;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -113,6 +112,14 @@ h2, h4 {
 
 .bicycle-wheel {
     animation: spin .8s 5 linear;
+}
+
+footer {
+    display: flex;
+    align-content: end;
+    justify-content: center;
+    text-align: center;
+
 }
 
 @keyframes spin {
