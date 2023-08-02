@@ -2,7 +2,10 @@
 
 body {
     background-color: rgb(121, 185, 210);
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 header {
@@ -10,8 +13,11 @@ header {
     border: 3px solid;
     border-radius: 15px;
     padding: 10px;
-    margin: 20px auto 30px;
+    margin: 20px auto 10px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    /* align-content: center; */
     height: 15%;
 }
 
@@ -35,12 +41,21 @@ form {
     font-size : 1.25rem;
 }
 
+.results {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
 .network-result {
     background-color: whitesmoke;
     border: 3px solid;
     border-radius: 30px;
     padding: 20px 30px;
-    margin: 20px auto;
+    margin: 5px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #network-location, #network-name, #station-qty {
@@ -51,17 +66,19 @@ form {
     background-color: whitesmoke;
     border-style: solid;
     border-radius: 30px;
-    height: 50%;
-    position: absolute;
-    bottom: 0px;
-    width: 84%;
+    max-height: 50%;
+    position: bottom;
+    /* bottom: 0px; */
+    width: 80%;
     padding: 20px;
-    margin: 20px auto;
+    margin: 5px auto;
     overflow: auto;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 }
-
-
 
 .station {
     background-color: azure;
