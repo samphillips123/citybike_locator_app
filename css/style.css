@@ -38,6 +38,7 @@ form {
     border: 1px solid;
     display: flex;
     justify-content: center;
+    margin: auto;
 }
 
 [type=text] {
@@ -125,49 +126,47 @@ h2, h4 {
 
   /* Media Query Tablet */
 
-  @media screen and (min-width: 450px){
-    .sticky-header {
-        /* position: fixed; */
-        display: flex;
-        justify-content: left;
-        flex-direction: column;
-        align-content: left;
-    }
+@media screen and (min-width: 450px){
 
     header {
-        background-color: whitesmoke;
-        border: 3px solid;
-        border-radius: 15px;
-        padding: 10px;
-        margin: 20px auto 10px;
-        text-align: left;
-        /* display: flex;
-        justify-content: center; */
-        /* top: 0px; */
-        /* height: 15%; */
+        /* text-align: left; */
     }
 
     form {
-        border-radius: 6px;
-        border: 1px solid;
         width: 50%;
-        display: flex;
-        justify-content: center;
-        align-content: center;
     }
-    
+
     [type=text] {
-        font-size: 1.25rem;
         width: 100%;
-    }
-    
-    [type=submit] {
-        font-size : 1.25rem;
     }
 
     #results-list {
         width: 50%;
-      }
-  }
+    }
+}
 
-  
+/* Media Query for Desktop */
+
+@media  (min-width: 1000px) {
+    header {
+        text-align: left;
+        width: 90%;
+    }
+
+    h1 {
+        width: 90%;
+        margin: 10px auto 10px 30px;
+    }
+
+    form {
+        width: 30%;
+    }
+
+    [type=text] {
+        width: 100%;
+    }
+
+    #results-list {
+        width: 30%;
+    }
+}
