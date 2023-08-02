@@ -56,11 +56,6 @@ window.onload = (e) => {
                     networkInfoH2.innerHTML = 'Network Info'
                     networkInfoDiv.appendChild(networkInfoH2)
                 
-                    // Create "network-result" div once a search has happened.
-                    let resultsListDiv = document.createElement('div')
-                    resultsListDiv.setAttribute('id','results-list')
-                    networkInfoDiv.appendChild(resultsListDiv)
-
                     // Create network name
                     let networkName = document.createElement('dt')
                     networkName.setAttribute('id', 'network-name')
@@ -78,7 +73,13 @@ window.onload = (e) => {
                     networkStationQty.setAttribute('id','station-qty')
                     networkStationQty.innerHTML = "Number of Stations: "
                     networkInfoDiv.appendChild(networkStationQty)
-                    
+
+
+                    // Create "network-result" div once a search has happened.
+                    let resultsListDiv = document.createElement('div')
+                    resultsListDiv.setAttribute('id','results-list')
+                    resultsDiv.appendChild(resultsListDiv)
+
                     break
 
                     // **** COME BACK TO THIS LATER TO HANDLE INSTANCES WHERE THERE MAY BE MULTIPLE RESULTS ****
