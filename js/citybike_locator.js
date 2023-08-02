@@ -161,13 +161,6 @@ window.onload = (e) => {
                     dtStallsAvail.innerHTML = '<strong>Empty Stalls: </strong>' + networkStations[i].empty_slots                    
                     stationDiv.appendChild(dtStallsAvail)
                 }
-                // console.log('complete with ' + cityBikeLocation.network.stations.length + ' stations shown')
-                // console.log(networkStations[99].name)
-            
-                // // add event listener for a click on a specific station div. This will pull data for that station and highlight it in it's own section.
-                // const testFunction = () => {console.log('you clicked')}
-                
-                // document.addEventListener("click", testFunction)   
                 
                 // call hideImg to hide wheel to be ready for next search
                 hideImg()            

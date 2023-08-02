@@ -23,3 +23,6 @@
 # - Figure out how to successfully use the sticky header without the results appearing behind it.
 # - Allow the results section to be scrollable.
 # - Have wheel icon appear over the top of all other items at the center of the screen when search is initiated.
+# - Allow user to indicate how many results they want shown at a time, add pages if needed.
+# - Handle scenarios when search doesn't bring back results
+# - Auto generate search options based off first few characters typed.

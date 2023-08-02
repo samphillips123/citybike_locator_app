@@ -23,10 +23,6 @@ header {
     padding: 10px;
     margin: 20px auto 10px;
     text-align: center;
-    /* display: flex;
-    justify-content: center; */
-    /* top: 0px; */
-    /* height: 15%; */
 }
 
 h1 {
@@ -52,11 +48,8 @@ form {
 
 .results {
     display: flex;
-    justify-content:end;
+    justify-content: end;
     flex-direction: column;
-    /* overflow-y: scroll; */
-    /* width: 400px; */
-    /* height: auto; */
 }
 
 .network-result {
@@ -105,7 +98,6 @@ h2, h4 {
 .search-animation {
     display: flex;
     justify-content: center;
-    /* margin: 50%; */
 }
 
 /* Bicycle Wheel Animation */
@@ -133,11 +125,6 @@ footer {
   /* Media Query Tablet */
 
 @media screen and (min-width: 450px){
-
-    header {
-        /* text-align: left; */
-    }
-
     form {
         width: 50%;
     }
