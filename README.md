@@ -5,8 +5,6 @@
 
 # Data is fetched from the CityBikes API - https://api.citybik.es/v2/#filter
 
-# 
-
 # Minimum goals:
 # Produce an app that can be used to search for general locations which will produce a response from the API in a list view of all citybike share locations in that area.
 # Responses will show the user how many bikes/electric bikes are available to rent and if/how many stalls are available to return bikes. 
