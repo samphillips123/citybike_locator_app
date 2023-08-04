@@ -3,17 +3,19 @@
 body {
     background-color: rgb(121, 185, 210);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /* display: flex;
+    display: flex;
     flex-direction: column;
-    justify-content: space-between; */
+    justify-content: space-between;
+    height: 100vh;
 }
 
 .sticky-header {
-    /* position: fixed; */
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-content: center;
+    /* test */
+    position: fixed;
 }
 
 header {
@@ -35,6 +37,7 @@ form {
     display: flex;
     justify-content: center;
     margin: auto;
+    z-index: 2;
 }
 
 [type=text] {
@@ -45,6 +48,14 @@ form {
 [type=submit] {
     font-size : 1.25rem;
 }
+
+/* test */
+.spacer
+{
+    width: 100%;
+    height: 150px;
+}
+/* test */
 
 .results {
     display: flex;
@@ -79,6 +90,10 @@ form {
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
+    /* test */
+    overflow: auto;
+    height: 380px;
+    /* height: 50%;  */
 }
 
 .station {
@@ -98,6 +113,15 @@ h2, h4 {
 .search-animation {
     display: flex;
     justify-content: center;
+    /* test */
+    margin: 50% 50%;
+    
+    /* height: 100%; */
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 /* Bicycle Wheel Animation */
@@ -114,11 +138,12 @@ footer {
 }
 
 @keyframes spin {
-    from {
+    0% {
       transform: rotate(0deg);
     }
-    to {
+    100% {
       transform: rotate(360deg);
+      /* visibility: hidden */
     }
   }
 
