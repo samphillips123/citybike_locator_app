@@ -7,6 +7,9 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
+    width: 100vw;
+    margin: auto;
+    z-index: 0;
 }
 
 .sticky-header {
@@ -16,6 +19,7 @@ body {
     align-content: center;
     /* test */
     position: fixed;
+    width: 100%;
 }
 
 header {
@@ -37,7 +41,7 @@ form {
     display: flex;
     justify-content: center;
     margin: auto;
-    z-index: 2;
+    z-index: 3;
 }
 
 [type=text] {
@@ -93,7 +97,6 @@ form {
     /* test */
     overflow: auto;
     height: 380px;
-    /* height: 50%;  */
 }
 
 .station {
@@ -110,18 +113,20 @@ h2, h4 {
     text-align: center;
 }
 
+/* .wheel-background {
+    height: 100vh;
+    background-color: rgb(67 109 126);
+    opacity: 80%;
+    z-index: 1;
+} */
+
 .search-animation {
     display: flex;
     justify-content: center;
     /* test */
-    margin: 50% 50%;
-    
-    /* height: 100%; */
-    position: absolute;
+    margin: 50vh 50vw;
     transform: translate(-50%, -50%);
-    top: 0;
-    left: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 /* Bicycle Wheel Animation */
@@ -143,7 +148,6 @@ footer {
     }
     100% {
       transform: rotate(360deg);
-      /* visibility: hidden */
     }
   }
 
